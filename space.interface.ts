@@ -10,13 +10,7 @@ export interface SpaceInterface {
             core: SpaceCore
         },
         second_stage: {
-            payloads: [
-                {
-                    payload_type: string,
-                    payload_mass_kg: number,
-                    payload_mass_lbs: number
-                }
-            ]
+            payloads: SpacePayloads[]
         }
 
     }
@@ -34,6 +28,11 @@ interface SpaceInterfaceLinks {
 interface SpaceCore {
     reuse_count: number,
     status: string
+}
+interface SpacePayloads {
+    payload_type: string,
+    payload_mass_kg: number,
+    payload_mass_lbs: number
 }
 
 const space: SpaceInterface = {
